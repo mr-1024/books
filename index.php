@@ -148,7 +148,7 @@ print_r($result);
 	.content{font-size:14px;margin:0 auto;}
     dd{display: inline-block;width:20%;}
     .category li{width:8%;display: inline-block;padding: 0;margin-left:0;}
-    li{width:40%;display: inline-block;padding: 10px; margin-left:8.7%;}
+    li{width:39%;display: inline-block;padding: 10px; margin-left:8.7%;}
     h2{text-align: center;}
 
 </style>
@@ -158,7 +158,7 @@ print_r($result);
 <head>
 	<!-- <meta charset="GBK"> -->
 	<meta http-equiv="Content-Type" content="text/html; charset=">
-	<title>爬虫</title>
+	<title>安心读</title>
     <script src="./js/jquery-2.2.3.js"></script>
     <script>
         function insertBookMarks() {
@@ -185,7 +185,7 @@ print_r($result);
     <div class="header"><a href="index.php?p=<?php echo $result['prev'];?>">上一页</a>|<a href="index.php?p=<?php
         echo $result['list'];?>">目录</a>|<a href="index.php?p=<?php echo $result['next'];?>">下一页</a>
         <a href="javascript:void(0);"><span onclick="insertBookMarks();">添加书签</span></a><a href="javascript:void(0);">
-            <span onclick="gotoBooksCity();">进入书城</span></a></div>
+            <!-- <span onclick="gotoBooksCity();">进入书城</span></a> --></div>
 </body>
 </html>
 <script type="text/javascript">
