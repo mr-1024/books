@@ -21,7 +21,7 @@ pipeline {
                 sh 'ls -alh'
                 echo '删除tar.gz文件'
                 sh 'rm -rf *.tar.gz'
-                sh "cd src && tar zcvf ${WORKSPACE}/books-${BUILD_ID}.tar.gz ./*  --exclude=./git && cd ../"
+                sh "tar zcvf ${WORKSPACE}/books-${BUILD_ID}.tar.gz ./*  --exclude=./git && cd ../"
                 echo "当前目录文件："
                 sh "ls -alh"
             }
