@@ -33,7 +33,7 @@ pipeline {
                 echo "当前目录："
                 sh 'pwd'
                 echo '准备上传：'
-                sh 'ssh ${RemoteLogin} -p ${RemoteLoginPort} "cd /${RemoteTmpDir} &&  mkdir -p ${BUILD_ID} &&  chmod 777 ${BUILD_ID}"'
+                sh 'sudo su -s /bin/bash ${RemoteLogin} -p ${RemoteLoginPort} "cd /${RemoteTmpDir} &&  mkdir -p ${BUILD_ID} &&  chmod 777 ${BUILD_ID}"'
                 sh 'scp -P ${RemoteLoginPort} ${WORKSPACE}/books-${BUILD_ID}.tar.gz ${RemoteLogin}:${RemoteTmpDir}/${BUILD_ID}'
                 echo '上传临时目录完成,开始解压'
                 sh 'ssh ${RemoteLogin} -p ${RemoteLoginPort} "cd ${RemoteTmpDir}/${BUILD_ID} &&  tar xf books-${BUILD_ID}.tar.gz -C ${RemoteDir}"'
