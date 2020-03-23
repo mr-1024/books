@@ -37,7 +37,7 @@ pipeline {
                 sh 'scp -P ${RemoteLoginPort} ${WORKSPACE}/books-${BUILD_ID}.tar.gz ${RemoteLogin}:${RemoteTmpDir}/${BUILD_ID}'
                 echo '上传临时目录完成,开始解压'
                 sh 'ssh ${RemoteLogin} -p ${RemoteLoginPort} "cd ${RemoteTmpDir}/${BUILD_ID} &&  tar xf books-${BUILD_ID}.tar.gz -C ${RemoteDir}"'
-                sh 'ssh ${RemoteLogin} -p ${RemoteLoginPort} "cd ${RemoteDir} && chmod -R 777 ${RemoteDir}/storage"'
+                #sh 'ssh ${RemoteLogin} -p ${RemoteLoginPort} "cd ${RemoteDir} && chmod -R 777 ${RemoteDir}/storage"'
                 echo '解压完成'
             }
         }
